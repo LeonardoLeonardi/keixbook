@@ -1,6 +1,7 @@
 import "./App.css";
 import Postheader from "./Postheader.js";
 import PostBody from "./PostBody.js";
+import ActionBar from "./ActionBar.js";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
         culpa qui officia deserunt mollit anim id est laborum."
         ></PostBody>
+        <ActionBar Ncomment="5" Nlike="20"></ActionBar>
       </div>
     </>
   );
