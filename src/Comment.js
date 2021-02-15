@@ -17,24 +17,15 @@ function PostComments(props) {
               {props.comment}
             </p>
           </div>
-
-          <ul className="px-2 sm:list-disc list-inside flex font-semibold text-gray-500 dark:text-gray-400">
-            <li className="list-comment text-sm">
-              <a href="#null">Mi piace </a>
-              <span>&nbsp;</span>
-            </li>
-            <li>
-              <a href="#null">Rispondi </a>
-              <span>&nbsp;</span>
-            </li>
-            <li>
-              <a href="#null">Condividi </a>
-              <span>&nbsp;</span>
-            </li>
-            <li>
-              <span>{props.day}g</span>
-            </li>
-          </ul>
+          <div className="pl-3 text-gray-500 font-semibold dark:text-gray-400">
+            <button className="font-semibold text-sm">Mi piace </button>
+            <span> · </span>
+            <button className="font-semibold text-sm">Rispondi </button>
+            <span> · </span>
+            <button className="font-semibold text-sm">Condividi</button>
+            <span> · </span>
+            <span className="font-semibold text-sm"> {props.day}g </span>
+          </div>
         </div>
       </div>
     </>
