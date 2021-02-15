@@ -13,7 +13,7 @@ let nome3 = "Manuele Gioconda";
 
 function PostComments(props) {
   return (
-    <div className="bg-white  max-w-md pt-1 rounded-b-xl ml-5 dark:bg-darkM-1 pb-2 ">
+    <div className="pt-1 pb-2">
       <div className="flex items-center">
         <div className="ml-3 mt-1 relative">
           <img className="rounded-full max-h-7 " src={User1} alt="" />
