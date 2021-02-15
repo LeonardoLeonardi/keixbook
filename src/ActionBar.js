@@ -2,9 +2,9 @@ import "./App.css";
 
 function ActionBar(props) {
   return (
-    <div className="bg-white  max-w-md  rounded-b-sm ml-5 dark:bg-darkM-1 divide-y divide-gray-500 pt-2">
-      <div className="flex justify-between text-black dark:text-gray-400">
-        <div className="ml-5 flex items-center">
+    <div className="bg-white  max-w-md  rounded-b-sm ml-5 dark:bg-darkM-1 divide-y divide-gray-400 pt-2">
+      <div className="flex justify-between text-gray-500 dark:text-gray-400">
+        <div className="ml-4 flex items-center">
           <svg
             className=" w-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -15,12 +15,12 @@ function ActionBar(props) {
           </svg>
           {props.Nlike}
         </div>
-        <p className="mr-5 dark:text-gray-400  text-black font-semibold text-sm">
+        <p className="mr-5 text-gray-500  dark:text-gray-400  text-sm">
           Commenti:{props.Ncomment}
         </p>
       </div>
-      <div className="mx-5 flex items-center justify-around pb-1">
-        <button className="flex items-center w-24 text-black dark:text-gray-400">
+      <div className="mx-3 flex items-center justify-around pb-1">
+        <button className="flex items-center w-24 text-gray-500 dark:text-gray-400 font-semibold">
           <svg
             className=" w-5 mr-1"
             xmlns="http://www.w3.org/2000/svg"
@@ -31,9 +31,9 @@ function ActionBar(props) {
           </svg>
           Mi piace
         </button>
-        <button className="dark:text-gray-400  text-black flex w-24  items-center">
+        <button className="text-gray-500 dark:text-gray-400 flex w-24  items-center font-semibold">
           <svg
-            className=" w-5"
+            className=" w-5 mr-1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
