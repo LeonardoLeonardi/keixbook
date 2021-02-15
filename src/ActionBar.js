@@ -19,7 +19,7 @@ function ActionBar(props) {
           Commenti:{props.Ncomment}
         </p>
       </div>
-      <div className="mx-3 flex items-center justify-around pb-1">
+      <div className="mx-3 flex items-center justify-around pb-1 pt-1">
         <button className="flex items-center w-24 text-gray-500 dark:text-gray-400 font-semibold">
           <svg
             className=" w-5 mr-1"
@@ -43,6 +43,7 @@ function ActionBar(props) {
           Condividi
         </button>
       </div>
+      <div className="mr-3 ml-3 pb-3"></div>
     </div>
   );
 }
