@@ -12,7 +12,7 @@ function Postheader(props) {
           <p className="text-gray-900 font-semibold text-base dark:text-white -mb-0.5">
             Leonardo Leonardi
           </p>
-          <p className="font-semibold text-xs text-gray-500">
+          <p className="font-semibold text-xs text-gray-500 dark:text-gray-400">
             14 febbraio 2020 alle 21:31
           </p>
         </div>
