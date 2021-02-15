@@ -4,7 +4,7 @@ import "./App.css";
 function Postheader(props) {
   return (
     <div className="bg-white dark:bg-darkM-1 max-w-md h-14 rounded-t-lg flex items-center ml-5 justify-between">
-      <div className="flex">
+      <div className="flex items-center">
         <div className="ml-3 mt-1 relative">
           <img className="rounded-full max-h-10 " src={User} alt="" />
         </div>
