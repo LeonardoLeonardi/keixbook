@@ -9,10 +9,10 @@ function Postheader(props) {
           <img className="rounded-full max-h-10 " src={User} alt="" />
         </div>
         <div className="ml-2 ">
-          <p className="text-gray-900 font-bold text-base dark:text-white">
+          <p className="text-gray-900 font-semibold text-base dark:text-white -mb-0.5">
             Leonardo Leonardi
           </p>
-          <p className="font-bold text-xs text-gray-400">
+          <p className="font-semibold text-xs text-gray-400">
             14 febbraio 2020 alle 21:31
           </p>
         </div>
