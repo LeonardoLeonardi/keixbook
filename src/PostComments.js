@@ -15,21 +15,25 @@ function PostComments(props) {
   return (
     <div className="pt-1 pb-2">
       <div className="flex items-center">
-        <div className="ml-3  relative">
-          <img className="rounded-full max-h-7 " src={User1} alt="" />
+        <div className="ml-3  relative dark:bg-white bg-gray-700 rounded-full">
+          <img
+            className="rounded-full max-h-7 cursor-pointer  dark:hover:opacity-80 hover:opacity-90"
+            src={User1}
+            alt=""
+          />
         </div>
-        <div className="ml-2 text-gray-500 dark:text-gray-400 flex bg-gray-200 dark:bg-darkM-2 rounded-3xl p-1">
+        <div className="ml-2 text-gray-500 dark:text-gray-400 flex bg-gray-200 dark:bg-darkM-2 rounded-3xl p-1 items-center">
           <form>
             <input
-              className="ml-2 w-72 bg-transparent placeholder-gray-500"
+              className="ml-2 w-72 bg-transparent placeholder-gray-400 focus:outline-none "
               type="text"
               placeholder="Scrivi un commento"
             />
           </form>
-          <div className="pt-1 mr-3">
-            <button>
+          <div className="pt-1">
+            <button className="focus:outline-none w-6 h-6 hover:bg-gray-500 dark:hover:bg-opacity-40 hover:bg-opacity-20 rounded-full relative">
               <svg
-                className="w-4"
+                className="w-5 ml-0.5"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
@@ -41,9 +45,9 @@ function PostComments(props) {
                 />
               </svg>
             </button>
-            <button>
+            <button className="focus:outline-none w-6 h-6 hover:bg-gray-500 dark:hover:bg-opacity-40 hover:bg-opacity-20 rounded-full relative">
               <svg
-                className="w-4"
+                className="w-5 ml-0.5"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
@@ -55,9 +59,9 @@ function PostComments(props) {
                 />
               </svg>
             </button>
-            <button>
+            <button className="focus:outline-none w-6 h-6 hover:bg-gray-500 dark:hover:bg-opacity-40 hover:bg-opacity-20 rounded-full relative">
               <svg
-                className="w-4"
+                className="w-5 ml-0.5"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
@@ -78,7 +82,7 @@ function PostComments(props) {
         <Comment comment={commento3} day="7" nome={nome3} user={User3} />
       </div>
       <div className="flex justify-between text-gray-500 font-semibold dark:text-gray-400 text-sm items-center pt-1">
-        <button className="ml-3 font-semibold">
+        <button className="ml-3 font-semibold hover:underline cursor-pointer focus:outline-none">
           Visualizza altri commenti
         </button>
         <p className="mr-2 ">3 di 5</p>

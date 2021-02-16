@@ -4,7 +4,7 @@ function ActionBar(props) {
   return (
     <div className="divide-y divide-gray-400 pt-2">
       <div className="flex justify-between text-gray-500 dark:text-gray-400">
-        <div className="ml-4 flex items-center">
+        <div className="ml-4 flex items-center hover:underline cursor-pointer">
           <svg
             className=" w-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -15,12 +15,12 @@ function ActionBar(props) {
           </svg>
           {props.numberOfLikes}
         </div>
-        <p className="mr-5 text-gray-500  dark:text-gray-400  text-sm">
+        <p className="mr-5 text-gray-500  dark:text-gray-400  text-sm hover:underline cursor-pointer">
           Commenti:{props.numberOfComments}
         </p>
       </div>
       <div className="mx-3 flex items-center justify-around pb-1 pt-1">
-        <button className="flex items-center w-24 text-gray-500 dark:text-gray-400 font-semibold">
+        <button className="focus:outline-none flex flex-grow items-center justify-center w-24 text-gray-500 dark:text-gray-400 font-semibold hover:bg-gray-500 hover:bg-opacity-10  dark:hover:bg-opacity-20 rounded-md pr-3">
           <svg
             className=" w-5 mr-1"
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ function ActionBar(props) {
           </svg>
           Mi piace
         </button>
-        <button className="text-gray-500 dark:text-gray-400 flex w-24  items-center font-semibold">
+        <button className="focus:outline-none text-gray-500 dark:text-gray-400 flex w-24  items-center font-semibold flex-grow justify-center hover:bg-gray-500 hover:bg-opacity-10 dark:hover:bg-opacity-20 rounded-md">
           <svg
             className=" w-5 mr-1"
             xmlns="http://www.w3.org/2000/svg"

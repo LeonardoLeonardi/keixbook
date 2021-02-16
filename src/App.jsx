@@ -7,7 +7,7 @@ import PostComments from "./PostComments";
 function App() {
   return (
     <div className="bg-gray-200  dark:bg-darkM-3 h-screen pt-5">
-      <div className="ml-10 shadow bg-white dark:bg-darkM-1 max-w-md rounded-xl">
+      <div className="ml-10 shadow-md bg-white dark:bg-darkM-1 max-w-md rounded-xl">
         <PostHeader />
         <PostBody
           text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
