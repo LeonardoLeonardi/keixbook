@@ -1,7 +1,7 @@
 import User1 from "./../img/User.jpg";
 import User2 from "./../img/User2.jpg";
 import User3 from "./../img/User3.jpg";
-import Comment from "./Comment.js";
+import Comment from "./Comment";
 let commento = "Lorem ipsum dolor sit amet, consectetur adipiscing elit";
 let commento2 = "Lorem ipsum dolor sit amet";
 let commento3 =

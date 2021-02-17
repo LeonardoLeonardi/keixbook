@@ -8,7 +8,7 @@ function isReadOn(p) {
 
 function ConversationItem(props) {
   const dateLuxon = DateTime.fromJSDate(props.date);
-  let string = dateLuxon.toRelative();
+  let string = dateLuxon.toRelative({ style: "narrow" });
   function isReadName(control) {
     if (control === 1)
       return (
