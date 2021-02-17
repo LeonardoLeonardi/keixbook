@@ -9,8 +9,8 @@ function isReadOn(p) {
 function ConversationItem(props) {
   const dateLuxon = DateTime.fromJSDate(props.date);
   let string = dateLuxon.toRelative();
-  function isReadName(p) {
-    if (p === 1)
+  function isReadName(control) {
+    if (control === 1)
       return (
         <p className="text-gray-900 font-semibold text-base dark:text-white -mb-0.5 ">
           {props.username}
@@ -23,8 +23,8 @@ function ConversationItem(props) {
         </p>
       );
   }
-  function isReadText(p) {
-    if (p === 1)
+  function isReadText(control) {
+    if (control === 1)
       return (
         <p className="flex-shrink font-semibold text-xs text-gray-900 dark:text-gray-400 truncate  w-32 h-4">
           {props.lastMessage}{" "}
