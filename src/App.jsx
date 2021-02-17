@@ -1,13 +1,40 @@
 import "./App.css";
-import PostHeader from "./PostHeader";
-import PostBody from "./PostBody";
-import ActionBar from "./ActionBar";
-import PostComments from "./PostComments";
+import PostHeader from "./Post/PostHeader";
+import PostBody from "./Post/PostBody";
+import ActionBar from "./Post/ActionBar";
+import PostComments from "./Post/PostComments";
+import ConversationItem from "./ConversationItem";
+import User from "./img/User.jpg";
+
+import { DateTime } from "luxon";
+const date = new Date(2020, 1, 1);
+const dateLuxon = DateTime.fromJSDate(date);
+let string = dateLuxon.toRelative();
+
+let username = "Leonardo Leonardi";
+let lastMessage = "Lorem nonsum nu ca..";
 
 function App() {
   return (
-    <div className="bg-gray-200  dark:bg-darkM-3 h-screen pt-5">
-      <div className="ml-10 shadow-md bg-white dark:bg-darkM-1 max-w-md rounded-xl">
+    <div className="bg-gray-400  dark:bg-darkM-3 h-screen pt-5">
+      <div>
+        <div className="ml-10 shadow-md bg-white dark:bg-darkM-1 max-w-xs rounded-sm">
+          <ConversationItem
+            image={User}
+            username={username}
+            lastMessage={lastMessage}
+            date={string}
+            isRead={1}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+/*<div className="ml-10 shadow-md bg-white dark:bg-darkM-1 max-w-md rounded-xl">
         <PostHeader />
         <PostBody
           text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -20,9 +47,4 @@ function App() {
         />
         <ActionBar numberOfComments="5" numberOfLikes="20" />
         <PostComments />
-      </div>
-    </div>
-  );
-}
-
-export default App;
+      </div>*/

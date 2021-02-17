@@ -1,5 +1,4 @@
-import User from "./img/User.jpg";
-import "./App.css";
+import User from "./../img/User.jpg";
 
 function PostHeader(props) {
   return (

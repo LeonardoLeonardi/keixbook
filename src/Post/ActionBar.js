@@ -1,5 +1,3 @@
-import "./App.css";
-
 function ActionBar(props) {
   return (
     <div className="divide-y divide-gray-400 pt-2">

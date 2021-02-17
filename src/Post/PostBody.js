@@ -1,5 +1,3 @@
-import "./App.css";
-
 function PostBody(props) {
   return (
     <div className="">
