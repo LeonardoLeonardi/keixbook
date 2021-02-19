@@ -7,6 +7,7 @@ import ActionBar from "./Post/ActionBar";
 import PostComments from "./Post/PostComments";
 import Conversation from "./Conversation";
 import MessageItem from "./MessageItem";
+import Message from "./Message";
 
 faker.locale = "it";
 
@@ -138,6 +139,19 @@ const data = [
     date: faker.date.past(),
   },
 ];
+const dataMessage = [
+  {
+    direction: "send",
+    read: "yes",
+  },
+  {
+    direction: "send",
+    read: "yes",
+  },
+  {
+    direction: "receive",
+  },
+];
 
 function App() {
   return (
@@ -146,14 +160,7 @@ function App() {
         <Conversation data={data} />
       </div>
       <div className="flex flex-col-reverse bg-white dark:bg-darkM-1 w-full h-full overflow-y-auto">
-        <div className="flex justify-between">
-          <div className=""></div>
-          <MessageItem direction="send" read="yes" />
-        </div>
-        <div className="flex justify-between">
-          <MessageItem direction="recive" />
-          <div className=""></div>
-        </div>
+        <Message dataMessage={dataMessage} />
       </div>
     </div>
   );
