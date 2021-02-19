@@ -1,7 +1,7 @@
 import { DateTime } from "luxon";
 
 function isReadOn(p) {
-  if (p === 1)
+  if (p === "no")
     return <p className="text-4xl mb-1 mr-3 text-blue-500 relative">·</p>;
   return;
 }
@@ -9,8 +9,9 @@ function isReadOn(p) {
 function ConversationItem(props) {
   const dateLuxon = DateTime.fromJSDate(props.date);
   let string = dateLuxon.toRelative({ style: "narrow" });
-  function isReadName(control) {
-    if (control === 1)
+
+  function isReadName() {
+    if (props.isRead === "no")
       return (
         <p className="text-gray-900 font-semibold text-base dark:text-white -mb-0.5 ">
           {props.username}
@@ -23,8 +24,8 @@ function ConversationItem(props) {
         </p>
       );
   }
-  function isReadText(control) {
-    if (control === 1)
+  function isReadText() {
+    if (props.isRead === "no")
       return (
         <p className="flex-shrink font-semibold text-xs text-gray-900 dark:text-gray-400 truncate  w-32 h-4">
           {props.lastMessage}{" "}
@@ -38,6 +39,7 @@ function ConversationItem(props) {
       );
     }
   }
+
   return (
     <div className="h-14 flex justify-between items-center cursor-pointer hover:bg-gray-500 hover:bg-opacity-20 mt-1 pb-1">
       <div className="flex items-center">

@@ -6,146 +6,154 @@ import PostBody from "./Post/PostBody";
 import ActionBar from "./Post/ActionBar";
 import PostComments from "./Post/PostComments";
 import Conversation from "./Conversation";
+import MessageItem from "./MessageItem";
 
-import User from "./img/User.jpg";
-import User2 from "./img/User2.jpg";
-import User3 from "./img/User3.jpg";
 faker.locale = "it";
 
 const data = [
   {
-    image: User,
+    image: faker.image.imageUrl(100, 100, 1),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 1,
+    isRead: "no",
     date: faker.date.recent(),
   },
   {
-    image: User2,
+    image: faker.image.imageUrl(100, 100, 2),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 1,
+    isRead: "yes",
     date: faker.date.past(),
   },
   {
-    image: User3,
+    image: faker.image.imageUrl(100, 100, 3),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 0,
+    isRead: "yes",
     date: faker.date.past(),
   },
   {
-    image: User,
+    image: faker.image.imageUrl(100, 100, 4),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 1,
+    isRead: "no",
     date: faker.date.past(),
   },
   {
-    image: User2,
+    image: faker.image.imageUrl(100, 100, 5),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 0,
+    isRead: "yes",
     date: faker.date.past(),
   },
   {
-    image: User3,
+    image: faker.image.imageUrl(100, 100, 6),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 0,
+    isRead: "no",
     date: faker.date.past(),
   },
   {
-    image: User,
+    image: faker.image.imageUrl(100, 100, 7),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 0,
+    isRead: "yes",
     date: faker.date.past(),
   },
   {
-    image: User2,
+    image: faker.image.imageUrl(100, 100, 8),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 0,
+    isRead: "no",
     date: faker.date.past(),
   },
   {
-    image: User3,
+    image: faker.image.imageUrl(100, 100, 9),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 1,
+    isRead: "yes",
     date: faker.date.past(),
   },
   {
-    image: User,
+    image: faker.image.imageUrl(100, 100, 10),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 0,
+    isRead: "no",
     date: faker.date.past(),
   },
   {
-    image: User2,
+    image: faker.image.imageUrl(100, 100, 11),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 1,
+    isRead: "yes",
     date: faker.date.past(),
   },
   {
-    image: User3,
+    image: faker.image.imageUrl(100, 100, 12),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 1,
+    isRead: "no",
     date: faker.date.past(),
   },
   {
-    image: User,
+    image: faker.image.imageUrl(100, 100, 13),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 1,
+    isRead: "yes",
     date: faker.date.past(),
   },
   {
-    image: User2,
+    image: faker.image.imageUrl(100, 100, 14),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 0,
+    isRead: "no",
     date: faker.date.past(),
   },
   {
-    image: User3,
+    image: faker.image.imageUrl(100, 100, 15),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 0,
+    isRead: "no",
     date: faker.date.past(),
   },
   {
-    image: User,
+    image: faker.image.imageUrl(100, 100, 16),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 0,
+    isRead: "yes",
     date: faker.date.past(),
   },
   {
-    image: User2,
+    image: faker.image.imageUrl(100, 100, 17),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 1,
+    isRead: "no",
     date: faker.date.past(),
   },
   {
-    image: User3,
+    image: faker.image.imageUrl(100, 100, 18),
     username: faker.name.findName(),
     lastMessage: faker.lorem.text(),
-    isRead: 1,
+    isRead: "yes",
     date: faker.date.past(),
   },
 ];
 
 function App() {
   return (
-    <div className="bg-gray-400  dark:bg-darkM-3 h-screen pt-5 pb-4">
-      <div className="flex flex-col ml-10 shadow-md bg-white dark:bg-darkM-1 max-w-xs rounded-sm h-full overflow-y-auto pb-2  ">
+    <div className="bg-gray-400 flex  dark:bg-darkM-3 h-screen p-5">
+      <div className="flex flex-col flex-shrink ml-10 shadow-md bg-white dark:bg-darkM-1 w-1/5 max-w-sm rounded-sm h-full overflow-y-auto pb-2  ">
         <Conversation data={data} />
+      </div>
+      <div className="flex flex-col-reverse bg-white dark:bg-darkM-1 w-full h-full overflow-y-auto">
+        <div className="flex justify-between">
+          <div className=""></div>
+          <MessageItem direction="send" read="yes" />
+        </div>
+        <div className="flex justify-between">
+          <MessageItem direction="recive" />
+          <div className=""></div>
+        </div>
       </div>
     </div>
   );
