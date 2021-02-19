@@ -1,8 +1,8 @@
 import User from "./img/User.jpg";
 function MessageItem(props) {
-  if (props.direction === "recive") {
+  if (props.direction === "receive") {
     return (
-      <div className="flex items-center my-3">
+      <div className="flex items-center  my-3">
         <div className="w-6">
           <img className="rounded-full " src={User} alt="" />
         </div>
