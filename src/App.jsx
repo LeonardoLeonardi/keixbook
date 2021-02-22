@@ -6,7 +6,6 @@ import PostBody from "./Post/PostBody";
 import ActionBar from "./Post/ActionBar";
 import PostComments from "./Post/PostComments";
 import Conversation from "./Conversation";
-import MessageItem from "./MessageItem";
 import Message from "./Message";
 
 faker.locale = "it";
@@ -141,25 +140,29 @@ const data = [
 ];
 const dataMessage = [
   {
+    timeSend: faker.date.past(),
+    received: faker.date.past(),
+    lastMessage: faker.date.past(),
     direction: "send",
     read: "yes",
   },
+
   {
-    direction: "send",
-    read: "yes",
-  },
-  {
+    timeSend: faker.date.past(),
+    received: faker.date.past(),
+    lastMessage: faker.date.past(),
     direction: "receive",
+    read: "yes",
   },
 ];
 
 function App() {
   return (
     <div className="bg-gray-400 flex  dark:bg-darkM-3 h-screen p-5">
-      <div className="flex flex-col flex-shrink ml-10 shadow-md bg-white dark:bg-darkM-1 w-1/5 max-w-sm rounded-sm h-full overflow-y-auto pb-2  ">
+      <div className="flex flex-col flex-shrink shadow-md bg-white dark:bg-darkM-1 rounded-sm h-full overflow-y-auto pb-2">
         <Conversation data={data} />
       </div>
-      <div className="flex flex-col-reverse bg-white dark:bg-darkM-1 w-full h-full overflow-y-auto">
+      <div className="flex flex-col-reverse flex-grow bg-white dark:bg-darkM-1 overflow-y-auto">
         <Message dataMessage={dataMessage} />
       </div>
     </div>
