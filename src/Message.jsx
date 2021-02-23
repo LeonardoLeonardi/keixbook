@@ -17,7 +17,7 @@ function Message(props) {
           return (
             <>
               <div className="flex justify-between">
-                <div></div>
+                <div className=""></div>
                 <MessageItem {...listData} key={index} />
               </div>
               {textData}
@@ -28,7 +28,7 @@ function Message(props) {
             <>
               <div className="flex justify-between">
                 <MessageItem {...listData} key={index} />
-                <div></div>
+                <div className=""></div>
               </div>
               {textData}
             </>
