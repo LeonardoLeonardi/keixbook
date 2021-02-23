@@ -10,160 +10,31 @@ import Message from "./Message";
 
 faker.locale = "it";
 
-const data = [
-  {
-    image: faker.image.imageUrl(100, 100, 1),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "no",
-    date: faker.date.recent(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 2),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "yes",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 3),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "yes",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 4),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "no",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 5),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "yes",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 6),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "no",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 7),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "yes",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 8),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "no",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 9),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "yes",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 10),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "no",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 11),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "yes",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 12),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "no",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 13),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "yes",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 14),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "no",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 15),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "no",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 16),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "yes",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 17),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "no",
-    date: faker.date.past(),
-  },
-  {
-    image: faker.image.imageUrl(100, 100, 18),
-    username: faker.name.findName(),
-    lastMessage: faker.lorem.text(),
-    isRead: "yes",
-    date: faker.date.past(),
-  },
-];
-const dataMessage = [
-  {
-    timeSend: faker.date.past(),
-    received: faker.date.past(),
-    lastMessage: faker.date.past(),
-    direction: "send",
-    read: "yes",
-  },
-
-  {
-    timeSend: faker.date.past(),
-    received: faker.date.past(),
-    lastMessage: faker.date.past(),
-    direction: "receive",
-    read: "yes",
-  },
-];
+const Conversations = new Array(20).fill({}).map(() => ({
+  image: faker.image.imageUrl(100, 100, null, true),
+  username: faker.name.findName(),
+  lastMessage: faker.lorem.text(),
+  isRead: faker.random.boolean(),
+  date: faker.date.recent(),
+  Messages: [new Array(20).fill({}).map(() => faker.lorem.text())],
+}));
+const dataMessage = new Array(20).fill({}).map(() => ({
+  sentAt: faker.date.past(),
+  receivedAt: faker.date.past(),
+  direction: faker.random.arrayElement(["send", "receive"]),
+  readAt: faker.random.boolean(),
+}));
 
 function App() {
   return (
     <div className="bg-gray-400 flex  dark:bg-darkM-3 h-screen p-5">
-      <div className="flex flex-col flex-shrink shadow-md bg-white dark:bg-darkM-1 rounded-sm h-full overflow-y-auto pb-2">
-        <Conversation data={data} />
+      <div className="flex flex-col flex-shrink shadow-md bg-white dark:bg-darkM-1 rounded-sm max-h-screen pb-2">
+        <div className="overflow-y-scroll">
+          <Conversation data={Conversations} />
+        </div>
       </div>
-      <div className="flex flex-col-reverse flex-grow bg-white dark:bg-darkM-1 overflow-y-auto">
-        <Message dataMessage={dataMessage} />
+      <div className="flex flex-col-reverse flex-grow bg-white dark:bg-darkM-1 max-h-screen">
+        <div className="overflow-y-auto"></div>
       </div>
     </div>
   );
