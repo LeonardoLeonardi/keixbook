@@ -6,7 +6,6 @@ import PostBody from "./Post/PostBody";
 import ActionBar from "./Post/ActionBar";
 import PostComments from "./Post/PostComments";
 import Conversation from "./Conversation";
-import Message from "./Message";
 
 faker.locale = "it";
 

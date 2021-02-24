@@ -5,7 +5,7 @@ function Message(props) {
   console.log(props);
   return (
     <>
-      {props.dataMessage.map((listData, index, array) => {
+      {props.chat.map((listData, index, array) => {
         let textData;
         const dateLuxon = DateTime.fromJSDate(listData.sentAt);
         const previusDate = index === 0 ? array[index] : array[index - 1];

@@ -4,14 +4,14 @@ function isReadOn(p) {
   if (!p) return <p className="text-4xl mb-1 mr-3 text-blue-500 relative">·</p>;
   return;
 }
-
 function ConversationItem(props) {
   const dateLuxon = DateTime.fromJSDate(props.date);
   let string = dateLuxon.toRelative({ style: "narrow" });
-  const prova = props.Messages;
-  function click() {
-    return <Message dataMessage={prova} />;
-  }
+  const prova = [
+    {
+      chat: props.Messages,
+    },
+  ];
 
   function isReadName() {
     if (!props.isRead)
@@ -45,7 +45,7 @@ function ConversationItem(props) {
   return (
     <div
       className="h-14 m-2 flex justify-between items-center cursor-pointer hover:bg-gray-500 hover:bg-opacity-20 mt-1 pb-1 rounded-sm"
-      onClick={() => click()}
+      onClick={() => Message(prova)}
     >
       <div className="flex items-center">
         <div className="ml-3 mt-1 relative flex-shrink-0 dark:bg-white bg-gray-700 rounded-full">
